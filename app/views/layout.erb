@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title>Sexy Note Handler</title>
+</head>
+<body>
+
+  <% if @note && !@note.errors.empty? %>
+    <% @note.errors.each do |field, message| %>
+      <span class="error"><%=field%> <%=message%></span>
+    <% end %>
+  <% end %>
+
+  <br/>
+  <nav>
+    <ul>
+      <li><a href="/" method="POST" class="create">Create note</a></li>
+    </ul>
+    <%= erb :_note_form %>
+  </nav>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>
