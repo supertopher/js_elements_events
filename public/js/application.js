@@ -8,7 +8,7 @@ $(document).ready(function(){
     $('.new_action').show();
   });
 
-  // grab that sick checkbox
+
 
 
   // AJAX front page live event loading
@@ -20,9 +20,21 @@ $(document).ready(function(){
       url: show_link,
       method: 'GET'
     }).done(function(requestData){
+      // daisy chain the shit out that ajax... note to self, make this method a variable
+
       $('.invite').remove();
       $(current_link).prepend('<hr/ class="invite">');
       $(current_link).parent().append(requestData + '<br/><hr/ class="invite">');
+
+
+      // grab that sick checkbox
+      $('.checker').change(function(){
+        // if ($('.checker').attr('checked')) {
+          $('.checker').parent().parent().addClass("completed");
+        // }
+      })
+
+
         // set note fields to be editable and send the edited information to
         $('.edit_note').click(function(event){
           event.preventDefault();
@@ -33,7 +45,6 @@ $(document).ready(function(){
           }).done(function(requestData){
             $(current_link).siblings().hide();
             $(current_link).parent().append(requestData + '<br/><hr/ class="invite">');
-            $()
           });
         });
       }).error(function(){
