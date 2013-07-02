@@ -1,5 +1,8 @@
 <div class="invite">
-<h2><%=@note.title%></h2>
-<p><%=@note.body%></a></p>
-<span><a class="edit_note" href="/notes/<%= @note.id %>/edit">Edit this note</a></span>
+  <form class="checkbox">
+    <input type="checkbox"> Completed! (like a boss!)
+  </form>
+  <h2><%=@note.title%></h2>
+  <p><%=@note.body%></a></p>
+  <span><a class="edit_note" href="/notes/<%= @note.id %>/edit">Edit this note</a></span>
 </div>

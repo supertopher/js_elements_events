@@ -8,6 +8,8 @@ $(document).ready(function(){
     $('.new_action').show();
   });
 
+  // grab that sick checkbox
+
 
   // AJAX front page live event loading
   $('.event_link').click(function(event){
